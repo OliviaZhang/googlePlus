@@ -4,7 +4,7 @@ from django.contrib.auth.models import BaseUserManager
 from django.db import models
 
 class Account(AbstractBaseUser):
-    email = models.EmailField(unique=true)
+    email = models.EmailField(unique=True)
     username = models.CharField(max_length=40, unique=True)
 
     first_name = models.CharField(max_length=40, blank=True)
@@ -16,7 +16,7 @@ class Account(AbstractBaseUser):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    objects = AccountManager()
+    #objects = AccountManager()
 
     USERNAME_FIELD = 'email'          # to tell django we want to use email to log user in
     REQUIRED_FIELDS = ['username']    # since this model is not User, we need to tell Djano what is the required fields
