@@ -119,3 +119,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# tell Django we are using our customized user model, in authentication app and Account model
+AUTH_USER_MODEL = 'authentication.Account'
