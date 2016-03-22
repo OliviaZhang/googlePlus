@@ -4,7 +4,10 @@ from authentication.models import Account
 from authentication.permissions import IsAccountOwner
 from authentication.serializers import AccountSerializer
 
+from django.views.generic.base import TemplateView
 
+class IndexView(TemplateView):
+    template_name = '../templates/index.html'
 class AccountViewSet(viewsets.ModelViewSet):
     lookup_field = 'username'                 # override the default look up field id
     queryset = Account.objects.all()

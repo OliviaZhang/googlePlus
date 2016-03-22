@@ -1,5 +1,9 @@
 from rest_framework_nested import routers
 
+from authentication.views import IndexView
+
+from django.conf.urls import patterns, url, include
+
 from authentication.views import AccountViewSet
 
 router = routers.SimpleRouter()
