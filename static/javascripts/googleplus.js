@@ -12,4 +12,16 @@
 
     angular
         .module('googleplus.config', []);
+
+    angular
+        .module('googleplus')
+        .run(run);
+
+    run.$inject = ['$http'];
+
+    // update xsrf headers to align with Django's defaults
+    function run($http) {
+        $http.defaults.xsrfHeaderName = 'X-CSRToken';
+        $http.defaults.xsrfCookieName = 'csrftoken';
+    }
 })();
