@@ -9,4 +9,7 @@
 
     angular
         .module('googleplus.routes', ['ngRoute']);
+
+    angular
+        .module('googleplus.config', []);
 })();
