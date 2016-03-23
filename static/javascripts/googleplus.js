@@ -4,7 +4,8 @@
     angular
         .module('googleplus', [
             'googleplus.routes',
-            'googleplus.authentication'
+            'googleplus.authentication',
+            'googleplus.config'
         ]);
 
     angular
