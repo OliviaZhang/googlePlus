@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('routes')
+        .module('googleplus.routes')
         .config(config);
 
     config.$inject = ['$routeProvider'];

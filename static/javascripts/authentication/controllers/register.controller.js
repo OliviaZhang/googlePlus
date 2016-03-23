@@ -2,7 +2,7 @@
    'use strict';
 
     angular
-        .module('authentication.controllers')
+        .module('googleplus.authentication.controllers')
         .controller('RegisterController', RegisterController);
 
     RegisterController.$inject = ['$location', '$scope', 'Authentication'];

@@ -1,15 +1,15 @@
 (function () {
     'use strict';
-
+    // controllers and services are authentication's dependencies
     angular
-        .module('authentication', [
-            'authentication.controllers',
-            'authentication.services'
+        .module('googleplus.authentication', [
+            'googleplus.authentication.controllers',
+            'googleplus.authentication.services'
         ]);
 
     angular
-        .module('authentication.controllers', []);
+        .module('googleplus.authentication.controllers', []);
 
     angular
-        .module('authentication.services', ['ngCookies']);
+        .module('googleplus.authentication.services', ['ngCookies']);
 })
