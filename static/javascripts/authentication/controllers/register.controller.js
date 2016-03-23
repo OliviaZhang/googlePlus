@@ -16,4 +16,4 @@
             Authentication.register(vm.email, vm.password, vm.username);
         }
     }
-});
+})();
