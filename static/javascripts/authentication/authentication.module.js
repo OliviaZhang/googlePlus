@@ -12,4 +12,4 @@
 
     angular
         .module('googleplus.authentication.services', ['ngCookies']);
-})
+})();

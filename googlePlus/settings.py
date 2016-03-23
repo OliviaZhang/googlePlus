@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'authentication',
-    'rest_framework_nested'
+    'rest_framework_nested',
+    'compressor'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -119,6 +120,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'staticfiles'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 
 # tell Django we are using our customized user model, in authentication app and Account model
