@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('authentication.services')
+        .module('googleplus.authentication.services')
         .factory('Authentication', Authentication); // register a service authentication on the module
 
     Authentication.$inject = ['$cookies', '$http']; // inject the 2 services as dependencies
