@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'authentication',
     'rest_framework_nested',
     'compressor',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    'posts'
 ]
 
 MIDDLEWARE_CLASSES = [
