@@ -34,7 +34,16 @@
             return $http.post('/api/v1/auth/login/', {
                email: email,
                password: password
-            });
+            }).then(loginSuccessFn, loginErrorFn);
+        }
+
+        function loginSuccessFn(data, status, headers, config) {
+            Authentication.setAuthenticatedAccount(data.data);
+            window.location = '/';
+        }
+
+        function loginErrorFn(data, status, headers, config) {
+            console.log('fail!');
         }
 
         /* return the currently authenticated account */
