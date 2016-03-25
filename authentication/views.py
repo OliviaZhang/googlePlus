@@ -12,6 +12,9 @@ from rest_framework import status, views
 from rest_framework.response import Response
 from django.contrib.auth import authenticate, login
 
+from django.contrib.auth import logout
+from rest_framework import permissions
+
 class IndexView(TemplateView):
     template_name = '../templates/index.html'
 class AccountViewSet(viewsets.ModelViewSet):
@@ -71,3 +74,12 @@ class LoginView(views.APIView):
                 'status': 'Unauthorized',
                 'massage': 'Username/password combination invalid'
             }, status=status.HTTP_401_UNAUTHORIZED)
+
+class LogoutView(views.APIView):
+    # only authenticated user can hit this endpoint
+    permissions_classes = (permissions.IsAuthenticated(),)
+
+    def post(self, request, format=None):
+        logout(request)
+
+        return Response({}, status=status.HTTP_204_NO_CONTENT)
