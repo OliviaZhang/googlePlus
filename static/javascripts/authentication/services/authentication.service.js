@@ -12,7 +12,11 @@
 
         var Authentication = {
             register:register, // define your service as a named object and then return it
-            login: login
+            login: login,
+            getAuthenticatedAccount: getAuthenticatedAccount,
+            isAuthenticated: isAuthenticated,
+            setAuthenticatedAccount: setAuthenticatedAccount,
+            unauthenticate: unauthenticate
         };
 
 
@@ -31,6 +35,26 @@
                email: email,
                password: password
             });
+        }
+
+        /* return the currently authenticated account */
+        function getAuthenticatedAccount() {
+            if (!$cookies.authenticatedAccount) {
+                return;
+            }
+            return JSON.parse($cookies.authenticatedAccount);
+        }
+
+        function isAuthenticated() {
+            return !!$cookies.authenticatedAccount;
+        }
+
+        function setAuthenticatedAccount(account) {
+            $cookies.authenticatedAccount = JSON.stringify(account);
+        }
+
+        function unauthenticate() {
+            delete $cookies.authenticatedAccount;
         }
     }
 })();
