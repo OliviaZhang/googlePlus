@@ -27,7 +27,15 @@
                username: username,
                password: password,
                email: email
-            });
+            }).then(registerSuccessFn, registerErrorFn);
+        }
+
+        function registerSuccessFn(data, status, headers, config) {
+            Authentication.login(email, password);
+        }
+
+        function registerErrorFn(data, status, headers, config) {
+            console.log('Fail!');
         }
 
         function login(email, password) {
