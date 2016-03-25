@@ -11,7 +11,8 @@
 
 
         var Authentication = {
-            register:register // define your service as a named object and then return it
+            register:register, // define your service as a named object and then return it
+            login: login
         };
 
 
@@ -22,6 +23,13 @@
                username: username,
                password: password,
                email: email
+            });
+        }
+
+        function login(email, password) {
+            return $http.post('/api/v1/auth/login/', {
+               email: email,
+               password: password
             });
         }
     }
