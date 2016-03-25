@@ -8,6 +8,7 @@
     RegisterController.$inject = ['$location', '$scope', 'Authentication'];
 
     function RegisterController($location, $scope, Authentication) {
+
         var vm = this;
 
         vm.register = register;

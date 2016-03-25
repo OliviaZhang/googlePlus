@@ -5,6 +5,8 @@ from authentication.permissions import IsAccountOwner
 from authentication.serializers import AccountSerializer
 
 from django.views.generic.base import TemplateView
+from rest_framework import status, views
+from rest_framework.response import Response
 
 class IndexView(TemplateView):
     template_name = '../templates/index.html'

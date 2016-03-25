@@ -8,9 +8,12 @@
     Authentication.$inject = ['$cookies', '$http']; // inject the 2 services as dependencies
 
     function Authentication($cookies, $http) {
+
+
         var Authentication = {
             register:register // define your service as a named object and then return it
         };
+
 
         return Authentication;
 

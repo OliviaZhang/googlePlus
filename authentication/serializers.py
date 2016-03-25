@@ -11,7 +11,7 @@ class AccountSerializer(serializers.ModelSerializer):
     confirm_password = serializers.CharField(write_only=True, required=False)
 
     class Meta:
-        models = Account
+        model = Account
         fields = ('id', 'email', 'username', 'created_at', 'updated_at', 'first_name', 'last_name', 'tagline', 'password', 'confirm_password',)
         read_only_fields = ('created_at', 'updated_at', )
 
