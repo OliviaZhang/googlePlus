@@ -23,7 +23,7 @@
 
     // update xsrf headers to align with Django's defaults
     function run($http) {
-        $http.defaults.xsrfHeaderName = 'X-CSRToken';
+        $http.defaults.xsrfHeaderName = 'X-CSRFToken';
         $http.defaults.xsrfCookieName = 'csrftoken';
     }
 })();
