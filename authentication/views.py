@@ -46,7 +46,7 @@ class LoginView(views.APIView):
     def post(self, request, format=None):
         data = json.loads(request.body)
 
-        email = data.get('emails', None)
+        email = data.get('email', None)
         password = data.get('password', None)
 
         account = authenticate(email=email, password=password)
@@ -66,6 +66,8 @@ class LoginView(views.APIView):
                 }, status=status.HTTP_401_UNAUTHORIZED)
         else:
             return Response({
+                'email': email,
+                'password': password,
                 'status': 'Unauthorized',
                 'massage': 'Username/password combination invalid'
             }, status=status.HTTP_401_UNAUTHORIZED)
