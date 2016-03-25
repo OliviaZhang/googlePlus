@@ -77,9 +77,8 @@ class LoginView(views.APIView):
 
 class LogoutView(views.APIView):
     # only authenticated user can hit this endpoint
-    permissions_classes = (permissions.IsAuthenticated(),)
+    permission_classes = (permissions.IsAuthenticated,)
 
     def post(self, request, format=None):
         logout(request)
-
         return Response({}, status=status.HTTP_204_NO_CONTENT)
