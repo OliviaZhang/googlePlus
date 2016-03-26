@@ -3,10 +3,11 @@ from django.db import models
 from authentication.models import Account
 
 class Post(models.Model):
+    # one account can have many posts
     author = models.ForeignKey(Account)
     content = models.TextField()
 
-    created_at = models.DataTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
