@@ -16,4 +16,4 @@ dist/
 # Staticfiles
 staticfiles/
 
-.idea/workspace.xml
+.idea/
