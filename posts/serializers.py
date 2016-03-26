@@ -12,6 +12,7 @@ class PostSerializer(serializers.ModelSerializer):
         fields = ('id', 'author', 'content', 'created_at', 'updated_at')
         read_only_fields = ('id', 'created_at', 'updated_at')
 
+        # add author to the list of validations we wish to skip
         def get_validation_exclusions(self, *args, **kwargs):
             exclusions = super(PostSerializer, self).get_validation_exclusions()
 
