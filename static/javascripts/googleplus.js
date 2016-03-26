@@ -7,7 +7,8 @@
             'googleplus.authentication',
             'googleplus.config',
             'googleplus.layout',
-            'googleplus.posts'
+            'googleplus.posts',
+            'googleplus.utils'
         ]);
 
     angular
