@@ -10,8 +10,18 @@ from authentication.views import LoginView
 
 from authentication.views import LogoutView
 
+from posts.views import AccountPostsViewSet, PostViewSet
+
 router = routers.SimpleRouter()
 router.register(r'accounts', AccountViewSet)
+router.register(r'posts', PostViewSet)
+
+accounts_router = router.NestedSimpleRouter(
+    router, r'accounts', lookup='account'
+)
+
+accounts_router.register(r'posts', AccountPostsViewSet)
+
 
 urlpatterns = patterns(
     '',
