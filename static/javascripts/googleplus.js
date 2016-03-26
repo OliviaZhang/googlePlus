@@ -6,7 +6,8 @@
             'googleplus.routes',
             'googleplus.authentication',
             'googleplus.config',
-            'googleplus.layout'
+            'googleplus.layout',
+            'googleplus.posts'
         ]);
 
     angular
